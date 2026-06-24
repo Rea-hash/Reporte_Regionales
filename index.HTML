@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reporte Regional Vento - Control Estratégico 360</title>
+    <style>
+        :root { --vento-red: #d32f2f; --vento-dark: #1a1a1a; --bg-table: #ffffff; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f4f7f6; margin: 0; padding: 10px; font-size: 11px; }
+        .container { max-width: 1350px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        
+        header { border-bottom: 4px solid var(--vento-red); margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; }
+        h1 { color: var(--vento-red); margin: 0; font-size: 20px; text-transform: uppercase; }
+        
+        .section-title { background: var(--vento-dark); color: #fff; padding: 6px 10px; margin-top: 15px; border-radius: 4px; font-weight: bold; font-size: 11px; text-transform: uppercase; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 5px; }
+        th { background: #f1f3f5; color: #333; font-weight: bold; font-size: 9px; text-transform: uppercase; border: 1px solid #dee2e6; padding: 6px 2px; }
+        td { border: 1px solid #dee2e6; padding: 3px; text-align: center; background: var(--bg-table); }
+        
+        input { width: 100%; border: 1px solid #ced4da; border-radius: 2px; padding: 4px; box-sizing: border-box; font-size: 11px; }
+        input:focus { border-color: var(--vento-red); outline: none; background: #fff9f9; }
+
+        /* Colores de Secciones */
+        .col-presupuesto { background-color: #e8f5e9; font-weight: bold; } 
+        .col-venta { background-color: #e3f2fd; font-weight: bold; }       
+        .col-alcance { background-color: #fff9c4; font-weight: bold; } 
+        .col-finanzas { background-color: #f3e5f5; } 
+        .col-staff { background-color: #fce4ec; }
+        
+        .btn-print { background: var(--vento-red); color: white; padding: 12px 0; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 20px; width: 100%; font-size: 14px; }
+        
+        @media print {
+            .no-print { display: none; }
+            body { padding: 0; background: white; }
+            .container { box-shadow: none; border: none; width: 100%; max-width: 100%; }
+            input { border: none !important; background: transparent !important; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div>
+            <h1>Reporte Regional de Operaciones</h1>
+            <strong>Vento Motorcycles México</strong>
+        </div>
+        <div style="text-align: right;">
+            <input type="text" placeholder="Nombre Regional" style="width: 180px;"><br>
+            <input type="date" style="width: 180px; margin-top: 4px;">
+        </div>
+    </header>
+
+    <div class="section-title">1. Presupuesto y Cumplimiento Global de Región</div>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2" class="col-presupuesto">Presupuesto Objetivo</th>
+                <th colspan="2" class="col-venta">Venta Real Acumulada</th>
+                <th colspan="2" class="col-alcance">Eficiencia Comercial</th>
+            </tr>
+            <tr>
+                <th class="col-presupuesto">Monto ($)</th>
+                <th class="col-presupuesto">Unidades</th>
+                <th class="col-venta">Monto ($)</th>
+                <th class="col-venta">Unidades</th>
+                <th class="col-alcance">% Alcance Venta</th>
+                <th class="col-alcance">% Conversión Leads</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" placeholder="$ 0.00"></td>
+                <td><input type="number" placeholder="0"></td>
+                <td><input type="text" placeholder="$ 0.00"></td>
+                <td><input type="number" placeholder="0"></td>
+                <td><input type="text" placeholder="0%"></td>
+                <td><input type="text" placeholder="0%"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="section-title">2. Desempeño de Financieras (Mix de Venta)</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Financiera</th>
+                <th>Venta Real ($)</th>
+                <th>Venta Real (Uds)</th>
+                <th style="background-color: #ffccbc;">Aprobados NO Pagados</th>
+                <th>Observaciones de Gestión</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><strong>Vento Credit</strong></td><td><input type="text"></td><td><input type="number"></td><td><input type="number"></td><td><input type="text"></td></tr>
+            <tr><td><strong>Vento Veloz</strong></td><td><input type="text"></td><td><input type="number"></td><td><input type="number"></td><td><input type="text"></td></tr>
+            <tr><td><strong>Maxikash</strong></td><td><input type="text"></td><td><input type="number"></td><td><input type="number"></td><td><input type="text"></td></tr>
+            <tr><td><strong>Coppel Pay</strong></td><td><input type="text"></td><td><input type="number"></td><td><input type="number"></td><td><input type="text"></td></tr>
+            <tr><td><strong>Galgo</strong></td><td><input type="text"></td><td><input type="number"></td><td><input type="number"></td><td><input type="text"></td></tr>
+        </tbody>
+    </table>
+
+    <div class="section-title">3. Diagnóstico Individual por Agencia (Ventas + Talento)</div>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 120px;">Tienda</th>
+                <th class="col-presupuesto">Pres. $</th>
+                <th class="col-presupuesto">Pres. Uds</th>
+                <th class="col-venta">Venta $</th>
+                <th class="col-venta">Venta Uds</th>
+                <th class="col-alcance">% Alcance</th>
+                <th class="col-staff">Plantilla</th>
+                <th class="col-staff">Activos</th>
+                <th class="col-staff">Búsqueda</th>
+                <th class="col-staff">Motivo de Baja</th>
+            </tr>
+        </thead>
+        <tbody>
+            <script>
+                for(let i=1; i<=12; i++) {
+                    document.write(`
+                    <tr>
+                        <td><input type="text" placeholder="Tienda ${i}"></td>
+                        <td class="col-presupuesto"><input type="text"></td>
+                        <td class="col-presupuesto"><input type="number"></td>
+                        <td class="col-venta"><input type="text"></td>
+                        <td class="col-venta"><input type="number"></td>
+                        <td class="col-alcance"><input type="text"></td>
+                        <td class="col-staff"><input type="number"></td>
+                        <td class="col-staff"><input type="number"></td>
+                        <td class="col-staff"><input type="number"></td>
+                        <td class="col-staff"><input type="text" placeholder="Especifique"></td>
+                    </tr>
+                    `);
+                }
+            </script>
+        </tbody>
+    </table>
+
+    <div class="no-print">
+        <button class="btn-print" onclick="window.print()">GENERAR REPORTE PDF</button>
+    </div>
+
+    <footer style="text-align: center; margin-top: 15px; font-size: 9px; color: #999;">
+        Confidencial | Vento Motorcycles México - Dirección de Operaciones
+    </footer>
+</div>
+
+</body>
+</html>
